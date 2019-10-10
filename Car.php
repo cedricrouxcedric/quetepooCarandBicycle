@@ -16,14 +16,14 @@ class Car
 
     public function start()
     {
-        $letStart='En voiture Simone!';
+        $letStart='Tut tut pouet pouet vroum vroum';
         return $letStart;
     }
     public function forward()
     {
         $this->currentSpeed = 80;
 
-        return "Go !";
+        return "POUSSEZ VOUS !!!!!! J'ARRIVE !";
     }
 
     public function brake(): string
@@ -79,7 +79,7 @@ class Car
     }
     public function getEnergyLevel(): int
     {
-        return $this->$energyLevel;
+        return $this->energyLevel;
     }
     public function setEnergyLevel(int $energyLevel): void
     {
