@@ -1,40 +1,29 @@
 <?php
-//Car.php
-
-
-/**
- * Class Car
- */
-
 class Car
 {
-    /**
-     * @var integer
-     */
-    private $nbWheels;
-    /**
-     * @var integer
-     */
     private $currentSpeed;
+    private $nbSeats = 5;
+    private $nbWheels = 4;
     private $color;
-    /**
-     * @var integer
-     */
-    private $nbSeats;
     private $energy;
-    /**
-     * @var integer
-     */
     private $energyLevel;
-
-    public function start(){
-        return "GO!";
+    public function __construct(string $color, int $nbSeats, string $energy)
+    {
+        $this->color = $color;
+        $this->nbSeats = $nbSeats;
+        $this->energy = $energy;
     }
 
+    public function start()
+    {
+        $letStart='En voiture Simone!';
+        return $letStart;
+    }
     public function forward()
     {
-        $this->currentSpeed = 15;
-        return "The car is moving forward!";
+        $this->currentSpeed = 80;
+
+        return "Go !";
     }
 
     public function brake(): string
@@ -46,67 +35,54 @@ class Car
         }
         $sentence .= "I'm stopped !";
         return $sentence;
-
     }
 
-    /**
-     * @return mixed
-     */
-    public function getNbWheels()
-    {
-        return $this->nbWheels;
-    }
-
-    /**
-     * @param int $nbWheels
-     */
-    public function setNbWheels(int $nbWheels)
-    {
-        $this->nbWheels = $nbWheels;
-    }
-    /**
-     * @return mixed
-     */
-    public function getCurrentSpeed()
-    {
-        return $this->currentSpeed;
-    }
-
-    /**
-     * @return string
-     */
     public function getColor(): string
     {
         return $this->color;
     }
-
-    /**
-     * @return int
-     */
+    public function setColor(string $color) : void
+    {
+        $this->color = $color;
+    }
+    public function getCurrentSpeed(): int
+    {
+        return $this->currentSpeed;
+    }
+    public function setCurrentSpeed(int $currentSpeed): void
+    {
+        $this->currentSpeed = $currentSpeed;
+    }
+    public function getNbWheels(): int
+    {
+        return $this->nbWheels;
+    }
+    public function setNbWheels(int $nbWheels): void
+    {
+        $this->nbWheels = $nbWheels;
+    }
     public function getNbSeats(): int
     {
         return $this->nbSeats;
     }
-
-    /**
-     * @return string
-     */
-    public function getEnergy(): string
+    public function setNbSeats(int $nbSeats): void
+    {
+        $this->nbSeats = $nbSeats;
+    }
+    public function getEnergy():int
     {
         return $this->energy;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getEnergyLevel()
+    public function setEnergy(int $energy): void
     {
-        return $this->energyLevel;
-    }
-
-    public function __construct(string $color,int $nbSeats,string $energy)
-    {
-        $this->color = $color;
-        $this->nbSeats = $nbSeats;
         $this->energy = $energy;
-    }}
+    }
+    public function getEnergyLevel(): int
+    {
+        return $this->$energyLevel;
+    }
+    public function setEnergyLevel(int $energyLevel): void
+    {
+        $this->energyLevel = $energyLevel;
+    }
+}
