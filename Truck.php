@@ -42,7 +42,7 @@ class Truck extends Vehicle
         if($this->load >= $this->loadCapacity){
             $tank = 'full';
         }
-        echo $tank;
+        return $tank;
     }
     public function addLoad(int $add) //can be negative to unload
     {
